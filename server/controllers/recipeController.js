@@ -4,5 +4,5 @@
  */
 
 exports.homepage = async(req,res)=> {
-    res.render('layouts/index');
+    res.render('index');
 }
