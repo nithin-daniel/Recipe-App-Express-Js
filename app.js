@@ -11,8 +11,9 @@ app.use(express.static('public'));
 app.use(expressLayouts)
 
 app.set('layout','./layouts/main');
+app.set('view engine','ejs');
 
 const routes = require('./server/routes/recepieRoutes.js')
 app.use('/',routes);
 
-app.listen(port,()=> console.log('Listen to port ${port}'))
+app.listen(port,()=> console.log(`Listen to port ${port}`))
