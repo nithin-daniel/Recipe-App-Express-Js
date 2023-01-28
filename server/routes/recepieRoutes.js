@@ -6,7 +6,8 @@ const recepieController = require('../controllers/recipeController')
  * App Routes
  */
 router.get('/',recepieController.homepage);
-router.get('/categories',recepieController.exploreCategories);
 router.get('/recipe/:id',recepieController.exploreRecipe);
+router.get('/categories',recepieController.exploreCategories);
+router.get('/categories/:id',recepieController.exploreCategoriesById);
 
 module.exports = router;
