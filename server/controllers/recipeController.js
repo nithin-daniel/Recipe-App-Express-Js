@@ -32,6 +32,9 @@ exports.homepage = async(req,res)=> {
 }
 
 
+
+
+
 /**
  * GET/categories
  * Categories
@@ -54,6 +57,47 @@ exports.exploreCategories = async (req,res)=> {
 
 
 }
+
+
+
+
+
+
+
+
+/**
+ * GET/recipe/:id
+ * Recipe
+ */
+
+exports.exploreRecipe = async (req,res)=> {
+
+  try{
+    let recipeId = req.params.id;
+    const recipe = await Recipe.findById(recipeId)
+      res.render('recipe',{title:'Cooking Blog - Recipe',recipe});
+      
+  }catch (error){
+      res.status(500).send({message:error.message || "Error Occured"});
+      
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
