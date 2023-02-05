@@ -9,5 +9,6 @@ router.get('/',recepieController.homepage);
 router.get('/recipe/:id',recepieController.exploreRecipe);
 router.get('/categories',recepieController.exploreCategories);
 router.get('/categories/:id',recepieController.exploreCategoriesById);
+router.post('/search',recepieController.searchRecipe);
 
 module.exports = router;

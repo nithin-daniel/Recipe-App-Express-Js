@@ -86,12 +86,6 @@ exports.exploreCategoriesById = async (req,res)=> {
 }
 
 
-
-
-
-
-
-
 /**
  * GET/recipe/:id
  * Recipe
@@ -110,10 +104,22 @@ exports.exploreRecipe = async (req,res)=> {
 }
 
 
+/**
+ * POST /search
+ * Search
+ */
+exports.searchRecipe = async (req,res)=> {
+  // searchTerm
 
-
-
-
+  try{
+    let searchTerm = req.body.searchTerm;
+    let recipe = await Recipe.find({ $text:{ $search: searchTerm,$diacriticSensitive:true } });
+    res.render('search',{title:'Cooking Blog - Search', recipe});
+  }catch{
+    res.status(500).send({message:error.message || "Error Occured"});
+  }
+  
+}
 
 
 
