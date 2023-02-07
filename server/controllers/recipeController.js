@@ -191,7 +191,7 @@ exports.submitRecipeOnPost = async (req,res)=> {
       imageUploadFile = req.files.image;
       newImageName = Date.now() + imageUploadFile.name;
 
-      uploadPath = require('path').resolve('./') + '/public/uploads' + newImageName;
+      uploadPath = require('path').resolve('./') + '/public/uploads/' + newImageName;
       imageUploadFile.mv(uploadPath,function(err){
         if(err) return res.status(500).send(err);
       })
