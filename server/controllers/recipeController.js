@@ -179,7 +179,7 @@ exports.submitRecipe = async (req,res)=> {
  */
 
 exports.submitRecipeOnPost = async (req,res)=> {
-  console.log(req.body);
+  // console.log(req.body);
   try{
     let imageUploadFile;
     let uploadPath;
@@ -216,7 +216,17 @@ exports.submitRecipeOnPost = async (req,res)=> {
   }
 }
 
+async function updateRecipe(){
+  try{
+    const res = await Recipe.updateOne({name:'New Chocolate Cake'},{ name: 'New Chocolate Cake updated' });
+    res.n; // Number of documemts watched
+    res.nModified; // Number of documents modified
+  }catch(error){
+    console.log(error);
+  }
+}
 
+updateRecipe();
 
 
 // async function insertDymmyCategoryData(){
