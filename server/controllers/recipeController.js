@@ -216,17 +216,38 @@ exports.submitRecipeOnPost = async (req,res)=> {
   }
 }
 
-async function updateRecipe(){
-  try{
-    const res = await Recipe.updateOne({name:'New Chocolate Cake'},{ name: 'New Chocolate Cake updated' });
-    res.n; // Number of documemts watched
-    res.nModified; // Number of documents modified
-  }catch(error){
-    console.log(error);
-  }
-}
 
-updateRecipe();
+// Update Recipe
+
+
+// async function updateRecipe(){
+//   try{
+//     const res = await Recipe.updateOne({name:'New Chocolate Cake'},{ name: 'New Chocolate Cake updated' });
+//     res.n; // Number of documemts watched
+//     res.nModified; // Number of documents modified
+//   }catch(error){
+//     console.log(error);
+//   }
+// }
+
+// updateRecipe();
+
+
+// Delete Recipe
+
+// async function deleteRecipe(){
+//   try{
+//     await Recipe.deleteOne({name:'Stir-fried vegetables'});
+//   }catch(error){
+//     console.log(error);
+//   }
+// }
+
+// deleteRecipe();
+
+
+
+
 
 
 // async function insertDymmyCategoryData(){
